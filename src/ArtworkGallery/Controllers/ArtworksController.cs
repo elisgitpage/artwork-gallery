@@ -8,9 +8,15 @@ namespace ArtworkGallery.Controllers
 {
     public class ArtworksController : Controller
     {
-        public string Detail()
+        public ActionResult Detail()
         {
-            return "Hello from the art works controller";
+            if(DateTime.Today.DayOfWeek == DayOfWeek.Tuesday)
+            {
+                return Redirect("/");
+
+            }
+
+            return Content("Hello from the artworks controller!");
         }
     }
 }
