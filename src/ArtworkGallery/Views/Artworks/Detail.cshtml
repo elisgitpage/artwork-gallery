@@ -24,9 +24,19 @@
         <h1>@artpieceTitle</h1>
         <h2>Medium : @medium</h2>
         <div>@Html.Raw(description)</div>
+        @if(pencils.Length > 0)
+        {
+            <h5>pencils used : </h5>
+            <div>
+                <ul>
+                    @foreach (var pencil in pencils)
+                    {
+                        <li>@pencil</li>
+                    }
+                </ul>
+            </div>
+        }
 
-        <h5>pencils used : </h5>
-        <div>@pencils</div>
     </div>
 </body>
 </html>
