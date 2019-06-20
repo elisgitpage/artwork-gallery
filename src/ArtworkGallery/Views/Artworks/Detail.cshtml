@@ -1,5 +1,15 @@
 ﻿@{
     Layout = null;
+
+    var artpieceTitle = " St Basils Cathedral";
+    var medium = "pencil on paper";
+    var description = "<p>Drawing of St Basils cathedral in Moscow.</p>";
+    var pencils = new string[]
+    {
+        "2B",
+        "4B",
+        "2H"
+    };
 }
 
 <!DOCTYPE html>
@@ -11,7 +21,12 @@
 </head>
 <body>
     <div>
-        <h1>Hello from our view!</h1>
+        <h1>@artpieceTitle</h1>
+        <h2>Medium : @medium</h2>
+        <div>@Html.Raw(description)</div>
+
+        <h5>pencils used : </h5>
+        <div>@pencils</div>
     </div>
 </body>
 </html>
