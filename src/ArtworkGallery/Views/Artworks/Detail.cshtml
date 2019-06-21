@@ -1,15 +1,7 @@
 ﻿@{
     Layout = null;
 
-    var artpieceTitle = " St Basils Cathedral";
-    var medium = "pencil on paper";
-    var description = "<p>Drawing of St Basils cathedral in Moscow.</p>";
-    var pencils = new string[]
-    {
-        "2B",
-        "4B",
-        "2H"
-    };
+
 }
 
 <!DOCTYPE html>
@@ -21,15 +13,17 @@
 </head>
 <body>
     <div>
-        <h1>@artpieceTitle</h1>
-        <h2>Medium : @medium</h2>
-        <div>@Html.Raw(description)</div>
-        @if(pencils.Length > 0)
+        <h1>@ViewBag.ArtpieceTitle</h1>
+        <h2>Medium : @ViewBag.Medium</h2>
+
+        <h5> Description:</h5>
+        <div>@Html.Raw(ViewBag.Description)</div>
+        @if(ViewBag.Pencils.Length > 0)
         {
             <h5>pencils used : </h5>
             <div>
                 <ul>
-                    @foreach (var pencil in pencils)
+                    @foreach (var pencil in ViewBag.Pencils)
                     {
                         <li>@pencil</li>
                     }
