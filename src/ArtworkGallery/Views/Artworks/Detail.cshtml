@@ -1,36 +1,24 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Artwork Detail";
 
 
 }
 
-<!DOCTYPE html>
+<h1>@ViewBag.ArtpieceTitle</h1>
+<h2>Medium : @ViewBag.Medium</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
+<h5> Description:</h5>
+<div>@Html.Raw(ViewBag.Description)</div>
+@if(ViewBag.Pencils.Length > 0)
+{
+    <h5>pencils used : </h5>
     <div>
-        <h1>@ViewBag.ArtpieceTitle</h1>
-        <h2>Medium : @ViewBag.Medium</h2>
-
-        <h5> Description:</h5>
-        <div>@Html.Raw(ViewBag.Description)</div>
-        @if(ViewBag.Pencils.Length > 0)
-        {
-            <h5>pencils used : </h5>
-            <div>
-                <ul>
-                    @foreach (var pencil in ViewBag.Pencils)
-                    {
-                        <li>@pencil</li>
-                    }
-                </ul>
-            </div>
-        }
-
+        <ul>
+            @foreach (var pencil in ViewBag.Pencils)
+            {
+                <li>@pencil</li>
+            }
+        </ul>
     </div>
-</body>
-</html>
+}
