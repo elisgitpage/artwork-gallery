@@ -1,23 +1,25 @@
-﻿@{
+﻿@model ArtworkGallery.Models.Artwork
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Artwork Detail";
+    ViewBag.Title = Model.DisplayText;
 
 
 }
 
-<h1>@ViewBag.ArtpieceTitle</h1>
-<h2>Medium : @ViewBag.Medium</h2>
+<h1>@Model.ArtworkTitle</h1>
+<h2>Medium : @Model.Medium</h2>
 
 <h5> Description:</h5>
-<div>@Html.Raw(ViewBag.Description)</div>
-@if(ViewBag.Pencils.Length > 0)
+<div>@Html.Raw(Model.DescriptionHtml)</div>
+@if(Model.Pencils.Length > 0)
 {
     <h5>pencils used : </h5>
     <div>
         <ul>
-            @foreach (var pencil in ViewBag.Pencils)
+            @foreach (var pencil in Model.Pencils)
             {
-                <li>@pencil</li>
+                <li>@pencil.Name: @pencil.Type</li>
             }
         </ul>
     </div>
