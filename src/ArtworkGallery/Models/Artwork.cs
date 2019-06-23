@@ -13,5 +13,22 @@ namespace ArtworkGallery.Models
         public string DescriptionHtml { get; set; }
         public Pencil[] Pencils { get; set; }
         public bool Favorite { get; set; }
+
+        public string DisplayText
+        {
+            get
+            {
+                return ArtworkTitle + " #" + Medium;
+            }
+        }
+
+        public string CoverImageFileName
+        {
+            get
+            {
+                return ArtworkTitle.Replace(" ", "-")
+                    .ToLower() + "-" + Medium + ".jpg";
+            }
+        }
     }
 }
