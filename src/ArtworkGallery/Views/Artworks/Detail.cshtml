@@ -7,20 +7,32 @@
 
 }
 
-<h1>@Model.ArtworkTitle</h1>
-<h2>Medium : @Model.Medium</h2>
+<h2>@Model.DisplayText</h2>
 
-<h5> Description:</h5>
-<div>@Html.Raw(Model.DescriptionHtml)</div>
-@if(Model.Pencils.Length > 0)
-{
-    <h5>pencils used : </h5>
-    <div>
-        <ul>
-            @foreach (var pencil in Model.Pencils)
+<div class="row">
+    <div class="col-md-6">
+        <div class="well">
+            <h5><label>Artwork Title:</label> @Model.ArtworkTitle</h5>
+            <h5><label>Medium:</label> @Model.Medium</h5>
+            <h5><label>Favorite:</label> @(Model.Favorite ? "Yes" : "No")</h5>
+            @if (Model.Pencils.Length > 0)
             {
-                <li>@pencil.Name: @pencil.Type</li>
+                <h5>Pencils used : </h5>
+                <div>
+                    <ul>
+                        @foreach (var pencil in Model.Pencils)
+                        {
+                            <li>@pencil.Name: @pencil.Type</li>
+                        }
+                    </ul>
+                </div>
             }
-        </ul>
+        </div>
+        <h5>Description</h5>
+        @Html.Raw(Model.DescriptionHtml)
     </div>
-}
+    <div class="col-md-6">
+        <img src="/Images/@Model.CoverImageFileName"
+             alt="@Model.DisplayText" class="img-responsive" />
+    </div>
+</div>

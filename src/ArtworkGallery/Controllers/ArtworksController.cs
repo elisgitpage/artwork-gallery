@@ -14,9 +14,9 @@ namespace ArtworkGallery.Controllers
         {
             var artwork = new Artwork()
             {
-                ArtworkTitle = "St Basils Cathedral",
-                Medium = "Pencil on Paper",
-                DescriptionHtml = "<p>Drawing of St Basils cathedral in Moscow.</p>",
+                ArtworkTitle = "Paris Opera House",
+                Medium = "pencil",
+                DescriptionHtml = "<p>Drawing of Paris Opera House.</p>",
                 Pencils = new Pencil[]
                 {
                         new Pencil() { Name = "Graphite", Type = "2B" },
