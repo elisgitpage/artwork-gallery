@@ -12,6 +12,7 @@ namespace ArtworkGallery.Data
         {
             new Artwork()
             {
+                Id = 1,
                 ArtworkTitle = "Paris Opera House",
                 Medium = "pencil",
                 DescriptionHtml = "<p>Drawing of Paris Opera House.</p>",
@@ -26,6 +27,7 @@ namespace ArtworkGallery.Data
             },
             new Artwork()
             {
+                Id = 2,
                 ArtworkTitle = "Ink Portrait #1",
                 Medium = "Ink",
                 DescriptionHtml = "<p>Drawing of a face I found on reddit gets drawn using pen.</p>",

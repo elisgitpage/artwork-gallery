@@ -1,4 +1,5 @@
-﻿using ArtworkGallery.Models;
+﻿using ArtworkGallery.Data;
+using ArtworkGallery.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,24 +10,22 @@ namespace ArtworkGallery.Controllers
 {
     public class ArtworksController : Controller
     {
+        private ArtworkRepository _artWorkRepository = null;
 
-        public ActionResult Detail()
+        public ArtworksController()
         {
-            var artwork = new Artwork()
+            _artWorkRepository = new ArtworkRepository();
+        }
+        public ActionResult Detail(int? id)
+        {
+            if (id == null)
             {
-                ArtworkTitle = "Paris Opera House",
-                Medium = "pencil",
-                DescriptionHtml = "<p>Drawing of Paris Opera House.</p>",
-                Pencils = new Pencil[]
-                {
-                        new Pencil() { Name = "Graphite", Type = "2B" },
-                        new Pencil() { Name = "Watercolor", Type = "4B" },
-                        new Pencil() { Name = "Charcoal", Type = "4H" },
-                
-                }
-            };
+                return HttpNotFound();
+            }
 
-            return View(artwork);
+            var artWork = _artWorkRepository.GetArtwork(id.Value);
+
+            return View(artWork);
         }
     }
 }
