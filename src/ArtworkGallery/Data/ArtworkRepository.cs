@@ -28,8 +28,8 @@ namespace ArtworkGallery.Data
             new Artwork()
             {
                 Id = 2,
-                ArtworkTitle = "Ink Portrait #1",
-                Medium = "Ink",
+                ArtworkTitle = "Ink Portrait no1",
+                Medium = "ink",
                 DescriptionHtml = "<p>Drawing of a face I found on reddit gets drawn using pen.</p>",
                 Pencils = new Pencil[]
                 {

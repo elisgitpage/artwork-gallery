@@ -1,7 +1,19 @@
-﻿
+﻿@model ArtworkGallery.Models.Artwork[]
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Artworks";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
+<div class="row">
+    @foreach (var artWork in Model)
+    {
+        <div class="col-md-3">
+            <h4>@artWork.DisplayText</h4>
+            <img src="~/Images/@artWork.CoverImageFileName"
+                 alt="@artWork.DisplayText"
+                 class="img-responsive" />
+        </div>
+    }
+</div>
