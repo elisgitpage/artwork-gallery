@@ -39,6 +39,11 @@ namespace ArtworkGallery.Data
             }
         };
            
+        public Artwork[] GetArtworks()
+        {
+            return _artworks;
+        }
+
         public Artwork GetArtwork(int id)
         {
             Artwork artworkReturned = null;

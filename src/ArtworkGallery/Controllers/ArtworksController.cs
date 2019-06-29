@@ -16,6 +16,13 @@ namespace ArtworkGallery.Controllers
         {
             _artWorkRepository = new ArtworkRepository();
         }
+
+        public ActionResult Index()
+        {
+            var artWorks = _artWorkRepository.GetArtworks();
+
+            return View(artWorks);
+        }
         public ActionResult Detail(int? id)
         {
             if (id == null)
