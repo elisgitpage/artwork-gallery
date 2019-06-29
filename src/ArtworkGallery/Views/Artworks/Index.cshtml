@@ -10,10 +10,14 @@
     @foreach (var artWork in Model)
     {
         <div class="col-md-3">
-            <h4>@artWork.DisplayText</h4>
-            <img src="~/Images/@artWork.CoverImageFileName"
-                 alt="@artWork.DisplayText"
-                 class="img-responsive" />
+            <h4>@Html.ActionLink(artWork.DisplayText, "Detail", 
+                new { id = artWork.Id })</h4>
+            <a href="@Url.Action("Detail", new { id = artWork.Id })" >
+                <img src="~/Images/@artWork.CoverImageFileName"
+                     alt="@artWork.DisplayText"
+                     class="img-responsive" />
+            </a>
+
         </div>
     }
 </div>
